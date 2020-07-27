@@ -11,29 +11,28 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="chore in chores"
-            v-bind:class="chore.highPriority ? 'high-priority' : 'low-priority'">
+            <li v-for="chore in chores">
                 <span>{{ chore.name }}</span>
-                <span v-if="chore.highPriority">High Priority</span>
-                <span v-if="!chore.highPriority">Low Priority</span>
+                <span v-if="chore.highPriority === 'high priority'">High Priority</span>
+                <span v-if="chore.highPriority === 'low priority'">Low Priority</span>
             </li>
         </ul>
 
         <form v-on:submit.prevent="saveNewChore">
             <label for="new-chore">Add a new chore:</label>
-            <input id="id" type="text" value="text" v-model="newChore"/>
+            <input id="new-chore" type="text" value="text" v-model="newChore"/>
 
             <label for="priority">Priority:</label>
             <fieldset>
                 <label for="low">Low Priority</label>
-                <input type="radio" name="priority" id="low" value="low"/>
+                <input type="radio" name="priority" id="low" value="low" v-model="highPriority"/>
 
                 <label for="high">High Priority</label>
-                <input type="radio" name="priority" id="high" value="high"/>
+                <input type="radio" name="priority" id="high" value="high" v-model="highPriority"/>
             </fieldset>
 
             <input type="submit" value="Save New Chore"/>
-          </form>
+        </form>
 
     </div>
 </body>
