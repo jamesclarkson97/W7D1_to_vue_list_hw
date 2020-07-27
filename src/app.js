@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
         el: "#app",
         data: {
             chores: [
-                {name: 'Wash car', highPriority: "low priority"},
-                {name: 'Cook dinner', highPriority: "high priority"},
-                {name: 'Buy umbrella', highPriority: "high priority"}
+                {name: 'Wash car', highPriority: 'low'},
+                {name: 'Cook dinner', highPriority: 'high'},
+                {name: 'Buy umbrella', highPriority: 'high'}
             ],
             newChore: '',
             highPriority: ''
@@ -16,10 +16,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
             saveNewChore: function(event) {
                 this.chores.push({
                     name: this.newChore,
-                    highPriority: "high priority"
+                    highPriority: `${event.target.priority.value}`
                 });
                 this.newChore = '';
-                
             }
         }
     });

@@ -13,8 +13,8 @@
         <ul>
             <li v-for="chore in chores">
                 <span>{{ chore.name }}</span>
-                <span v-if="chore.highPriority === 'high priority'">High Priority</span>
-                <span v-if="chore.highPriority === 'low priority'">Low Priority</span>
+                <span v-if="chore.highPriority === 'high'">High Priority</span>
+                <span v-if="chore.highPriority === 'low'">Low Priority</span>
             </li>
         </ul>
 
