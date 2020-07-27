@@ -5,16 +5,17 @@ document.addEventListener('DOMContentLoaded', ()=> {
         el: "#app",
         data: {
             chores: [
-                {name: 'Wash car'},
-                {name: 'Cook dinner'},
-                {name: 'Buy umbrella'}
+                {name: 'Wash car', highPriority: false},
+                {name: 'Cook dinner', highPriority: true},
+                {name: 'Buy umbrella', highPriority: true}
             ],
-            newChore: ''
+            newChore: '',
         },
         methods: {
             saveNewChore: function() {
                 this.chores.push({
-                    name: this.newChore
+                    name: this.newChore,
+                    highPriority: false
                 });
                 this.newChore = '';
             }
