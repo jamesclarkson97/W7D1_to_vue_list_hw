@@ -15,6 +15,13 @@
                 <span>{{ item }}</span>
             </li>
         </ul>
+
+        <form v-on:submit.prevent="saveNewItem">
+            <label for="new-item">Add a new chore:</label>
+            <input id="id" type="text" value="text" v-model="newItem"/>
+            <input type="submit" value="Save New Item"/>
+          </form>
+
     </div>
 </body>
 </html>
