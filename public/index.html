@@ -11,15 +11,15 @@
 <body>
     <div id="app">
         <ul>
-            <li v-for="item in items">
-                <span>{{ item.name }}</span>
+            <li v-for="chore in chores">
+                <span>{{ chore.name }}</span>
             </li>
         </ul>
 
-        <form v-on:submit.prevent="saveNewItem">
-            <label for="new-item">Add a new chore:</label>
-            <input id="id" type="text" value="text" v-model="newItem"/>
-            <input type="submit" value="Save New Item"/>
+        <form v-on:submit.prevent="saveNewChore">
+            <label for="new-chore">Add a new chore:</label>
+            <input id="id" type="text" value="text" v-model="newChore"/>
+            <input type="submit" value="Save New Chore"/>
           </form>
 
     </div>
